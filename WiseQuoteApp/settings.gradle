@@ -12,5 +12,5 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "BMI Calculator"
+rootProject.name = "Wise Quote App"
 include ':app'

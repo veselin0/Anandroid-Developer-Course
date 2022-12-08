@@ -1,4 +1,4 @@
-package com.example.gettingstartedapp;
+package com.example.bmicalculator;
 
 import org.junit.Test;
 

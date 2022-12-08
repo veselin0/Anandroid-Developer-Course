@@ -1,4 +1,4 @@
-package com.example.gettingstartedapp;
+package com.welovecrazyquotes.wisequoteapp;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.example.gettingstartedapp", appContext.getPackageName());
+        assertEquals("com.welovecrazyquotes.wisequoteapp", appContext.getPackageName());
     }
 }

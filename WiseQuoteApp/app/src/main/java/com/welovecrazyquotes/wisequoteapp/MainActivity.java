@@ -1,4 +1,4 @@
-package com.example.gettingstartedapp;
+package com.welovecrazyquotes.wisequoteapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
