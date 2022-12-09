@@ -3,6 +3,10 @@ package com.example.bmicalculator;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -12,9 +16,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        String alertText = "This is my variable text";
+        RadioButton maleRBtn = findViewById(R.id.radio_btn_male);
+        RadioButton femRBtn = findViewById(R.id.radio_btn_female);
 
-        Toast.makeText(this, alertText, Toast.LENGTH_LONG).show();
+        EditText ageEdiTxt = findViewById(R.id.edit_text_age);
+        EditText mtrEdiTxt = findViewById(R.id.edit_text_meter);
+        EditText cmEdiTxt = findViewById(R.id.edit_text_meter);
+        EditText kgEdiTxt = findViewById(R.id.edit_text_weight);
+
+        Button calcBtn = findViewById(R.id.button_calculate);
+        
+        TextView resultText = findViewById(R.id.text_view_result);
+
+        resultText.setText("Woohooo, I can update my TextView using programming code!");
 
     }
 }
