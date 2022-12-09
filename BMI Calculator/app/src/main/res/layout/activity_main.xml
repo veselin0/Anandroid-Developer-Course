@@ -2,29 +2,31 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:gravity="center_horizontal"
-    >
+    android:orientation="vertical"
+    android:padding="16dp">
 
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src=""
-        />
+        android:layout_margin="8dp"
+        android:src="@drawable/place_kitten" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="8dp"
         android:text="BMI Calculator" />
 
-    <LinearLayout
+    <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="8dp"
         android:orientation="horizontal">
 
         <RadioButton
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:text="Male" />
 
         <RadioButton
@@ -32,44 +34,53 @@
             android:layout_height="wrap_content"
             android:text="Female" />
 
-    </LinearLayout>
+    </RadioGroup>
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Age" />
+        android:layout_margin="8dp"
+        android:hint="Age"
+        android:inputType="number" />
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        >
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="Meters" />
+        android:layout_margin="8dp"
+        android:orientation="horizontal">
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Centimeters" />
+            android:hint="Meters"
+            android:inputType="number" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Centimeters"
+            android:inputType="number" />
 
     </LinearLayout>
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Weight(kg)" />
-    
+        android:layout_margin="8dp"
+        android:hint="Weight(kg)"
+        android:inputType="number" />
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Calculate"/>
+        android:layout_margin="8dp"
+        android:text="Calculate" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="23.6 You are healthy weight!"/>
+        android:layout_margin="16dp"
+        android:text="23.6 You are healthy weight!" />
 
 
 </LinearLayout>
