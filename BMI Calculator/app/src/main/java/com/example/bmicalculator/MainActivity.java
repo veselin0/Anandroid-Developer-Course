@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
         ageEdiTxt = findViewById(R.id.edit_text_age);
         mtrEdiTxt = findViewById(R.id.edit_text_meter);
-        cmEdiTxt = findViewById(R.id.edit_text_meter);
+        cmEdiTxt = findViewById(R.id.edit_text_centimeter);
         kgEdiTxt = findViewById(R.id.edit_text_weight);
 
         calcBtn = findViewById(R.id.button_calculate);
@@ -57,6 +57,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void calculateBMI() {
+        String ageText = ageEdiTxt.getText().toString();
+        String mtrText = mtrEdiTxt.getText().toString();
+        String cmText = cmEdiTxt.getText().toString();
+        String kgText = kgEdiTxt.getText().toString();
+
+        resultText.setText("Age: " + ageText + ", Meters: " + mtrText + ", Centimeters: " + cmText + ", Kilograms: " + kgText);
     }
 }
 
