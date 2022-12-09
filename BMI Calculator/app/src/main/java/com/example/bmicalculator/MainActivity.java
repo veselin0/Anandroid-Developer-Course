@@ -3,6 +3,7 @@ package com.example.bmicalculator;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -25,10 +26,16 @@ public class MainActivity extends AppCompatActivity {
         EditText kgEdiTxt = findViewById(R.id.edit_text_weight);
 
         Button calcBtn = findViewById(R.id.button_calculate);
-        
+
         TextView resultText = findViewById(R.id.text_view_result);
 
-        resultText.setText("Woohooo, I can update my TextView using programming code!");
+        calcBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity.this, "Wow, we can react to button click!",
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
 }
