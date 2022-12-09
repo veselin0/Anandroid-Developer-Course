@@ -12,31 +12,51 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    private RadioButton maleRBtn;
+    private RadioButton femRBtn;
+
+    private EditText ageEdiTxt;
+    private EditText mtrEdiTxt;
+    private EditText cmEdiTxt;
+    private EditText kgEdiTxt;
+
+    private Button calcBtn;
+
+    private TextView resultText;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        findViews();
+        setupButtonOnClickListener();
 
-        RadioButton maleRBtn = findViewById(R.id.radio_btn_male);
-        RadioButton femRBtn = findViewById(R.id.radio_btn_female);
+    }
 
-        EditText ageEdiTxt = findViewById(R.id.edit_text_age);
-        EditText mtrEdiTxt = findViewById(R.id.edit_text_meter);
-        EditText cmEdiTxt = findViewById(R.id.edit_text_meter);
-        EditText kgEdiTxt = findViewById(R.id.edit_text_weight);
+    private void findViews() {
+        maleRBtn = findViewById(R.id.radio_btn_male);
+        femRBtn = findViewById(R.id.radio_btn_female);
 
-        Button calcBtn = findViewById(R.id.button_calculate);
+        ageEdiTxt = findViewById(R.id.edit_text_age);
+        mtrEdiTxt = findViewById(R.id.edit_text_meter);
+        cmEdiTxt = findViewById(R.id.edit_text_meter);
+        kgEdiTxt = findViewById(R.id.edit_text_weight);
 
-        TextView resultText = findViewById(R.id.text_view_result);
+        calcBtn = findViewById(R.id.button_calculate);
 
+        resultText = findViewById(R.id.text_view_result);
+    }
+
+    private void setupButtonOnClickListener() {
         calcBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity.this, "Wow, we can react to button click!",
-                        Toast.LENGTH_SHORT).show();
+                calculateBMI();
             }
         });
+    }
 
+    private void calculateBMI() {
     }
 }
 
