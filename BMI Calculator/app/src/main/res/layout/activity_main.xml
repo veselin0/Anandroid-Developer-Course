@@ -46,27 +46,13 @@
         android:hint="Age"
         android:inputType="number" />
 
-    <LinearLayout
+    <EditText
+        android:id="@+id/edit_text_height"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:orientation="horizontal">
+        android:hint="Height(cm)"
+        android:inputType="numberDecimal" />
 
-        <EditText
-            android:id="@+id/edit_text_meter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="Meters"
-            android:inputType="number" />
-
-        <EditText
-            android:id="@+id/edit_text_centimeter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="Centimeters"
-            android:inputType="number" />
-
-    </LinearLayout>
 
     <EditText
         android:id="@+id/edit_text_weight"
@@ -74,7 +60,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:hint="Weight(kg)"
-        android:inputType="number" />
+        android:inputType="numberDecimal" />
 
     <Button
         android:id="@+id/button_calculate"

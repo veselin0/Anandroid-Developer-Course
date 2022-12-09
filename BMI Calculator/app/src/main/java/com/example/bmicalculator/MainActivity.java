@@ -16,9 +16,8 @@ public class MainActivity extends AppCompatActivity {
     private RadioButton femRBtn;
 
     private EditText ageEdiTxt;
-    private EditText mtrEdiTxt;
-    private EditText cmEdiTxt;
-    private EditText kgEdiTxt;
+    private EditText heightEdiTxt;
+    private EditText weightEdiTxt;
 
     private Button calcBtn;
 
@@ -38,9 +37,8 @@ public class MainActivity extends AppCompatActivity {
         femRBtn = findViewById(R.id.radio_btn_female);
 
         ageEdiTxt = findViewById(R.id.edit_text_age);
-        mtrEdiTxt = findViewById(R.id.edit_text_meter);
-        cmEdiTxt = findViewById(R.id.edit_text_centimeter);
-        kgEdiTxt = findViewById(R.id.edit_text_weight);
+        heightEdiTxt = findViewById(R.id.edit_text_height);
+        weightEdiTxt = findViewById(R.id.edit_text_weight);
 
         calcBtn = findViewById(R.id.button_calculate);
 
@@ -58,11 +56,19 @@ public class MainActivity extends AppCompatActivity {
 
     private void calculateBMI() {
         String ageText = ageEdiTxt.getText().toString();
-        String mtrText = mtrEdiTxt.getText().toString();
-        String cmText = cmEdiTxt.getText().toString();
-        String kgText = kgEdiTxt.getText().toString();
+        String heightText = heightEdiTxt.getText().toString();
+        String weightText = weightEdiTxt.getText().toString();
 
-        resultText.setText("Age: " + ageText + ", Meters: " + mtrText + ", Centimeters: " + cmText + ", Kilograms: " + kgText);
+        // Converting number Strings into integers.
+        int age = Integer.parseInt(ageText);
+        double height = Double.parseDouble(heightText);
+        double weight = Double.parseDouble(weightText);
+
+        // BMI formula: weight divided by height squared.
+        double bmi = weight / (height * height);
+        String bmiText = String.valueOf(bmi);
+
+        resultText.setText(bmiText);
     }
 }
 
