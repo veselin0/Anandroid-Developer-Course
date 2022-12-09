@@ -50,7 +50,7 @@
         android:id="@+id/edit_text_height"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Height(cm)"
+        android:hint="Height(m)"
         android:inputType="numberDecimal" />
 
 
@@ -73,8 +73,7 @@
         android:id="@+id/text_view_result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:text="23.6 You are healthy weight!" />
+        android:layout_margin="16dp" />
 
 
 </LinearLayout>

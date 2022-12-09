@@ -10,6 +10,8 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.DecimalFormat;
+
 public class MainActivity extends AppCompatActivity {
 
     private RadioButton maleRBtn;
@@ -49,27 +51,77 @@ public class MainActivity extends AppCompatActivity {
         calcBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                calculateBMI();
+                double bmiResult = calculateBMI();
+
+                String ageText = ageEdiTxt.getText().toString();
+                int age = Integer.parseInt(ageText);
+
+                if (age >= 18) {
+                    displayResult(bmiResult);
+                } else {
+                    displayGuidance(bmiResult);
+                }
+
+
             }
         });
     }
 
-    private void calculateBMI() {
-        String ageText = ageEdiTxt.getText().toString();
+
+
+    private double calculateBMI() {
         String heightText = heightEdiTxt.getText().toString();
         String weightText = weightEdiTxt.getText().toString();
 
         // Converting number Strings into integers.
-        int age = Integer.parseInt(ageText);
         double height = Double.parseDouble(heightText);
         double weight = Double.parseDouble(weightText);
 
         // BMI formula: weight divided by height squared.
-        double bmi = weight / (height * height);
-        String bmiText = String.valueOf(bmi);
-
-        resultText.setText(bmiText);
+        return weight / (height * height);
     }
+
+    private void displayResult(double bmi) {
+        DecimalFormat myDecimalFormatter = new DecimalFormat("0.00");
+        String bmiText = myDecimalFormatter.format(bmi);
+
+        String fullResultString;
+
+        if (bmi < 18.5) {
+            // Display underweight
+            fullResultString = bmiText + " - You are underweight";
+        } else if (bmi > 25) {
+            // Display overweight
+            fullResultString = bmiText + " - You are overweight";
+        } else {
+            // Display healthy
+            fullResultString = bmiText + " - You are a healthy weight";
+        }
+        resultText.setText(fullResultString);
+
+    }
+
+    private void displayGuidance(double bmi) {
+        DecimalFormat myDecimalFormatter = new DecimalFormat("0.00");
+        String bmiText = myDecimalFormatter.format(bmi);
+
+        String fullResultString;
+        if (maleRBtn.isChecked()) {
+            // Display boy guidance
+            fullResultString = bmiText + " As you are under 18, please consult " +
+                    "your doctor for the healthy range for boys.";
+        } else if (femRBtn.isChecked()) {
+            // Display girl guidance
+            fullResultString = bmiText + " As you are under 18, please consult " +
+                    "your doctor for the healthy range for girls.";
+        } else {
+            // Display general guidance
+            fullResultString = bmiText + " As you are under 18, please consult " +
+                    "your doctor for the healthy range.";
+        }
+        resultText.setText(fullResultString);
+    }
+
 }
 
 
