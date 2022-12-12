@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Restaurant App</string>
+    <string name="text_view_restaurants_name">Hungry Hog!</string>
+    <string name="text_view_starters">Starters!</string>
+</resources>
