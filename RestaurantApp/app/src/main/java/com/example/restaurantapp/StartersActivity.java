@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.hardware.lights.LightState;
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 public class StartersActivity extends AppCompatActivity {
@@ -37,5 +38,11 @@ public class StartersActivity extends AppCompatActivity {
                 "Shrimp and lemon soup",
                 "Parsley and sweetcorn gyoza"
         };
+
+        ArrayAdapter<String> starterDishesAdapter = new ArrayAdapter<>(this,
+                android.R.layout.simple_list_item_1, starterDishes);
+
+        startersList.setAdapter(starterDishesAdapter);
+
     }
 }
