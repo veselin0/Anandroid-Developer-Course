@@ -16,6 +16,9 @@ public class StartersActivity extends AppCompatActivity {
 
         ListView startersList = findViewById(R.id.list_view_starters);
 
+        StarterDish starterDishOne = new StarterDish("Nori and black pepper soup","bla bla bla", 999);
+
+
         String[] starterDishes = {
                 "Nori and black pepper soup",
                 "Tofu and coconut soup",
