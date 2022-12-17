@@ -6,13 +6,13 @@ import androidx.cardview.widget.CardView;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
     CardView startersCard;
     CardView mainsCard;
+    CardView dessertsCard;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +20,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         startersCard = findViewById(R.id.card_view_starters);
         mainsCard = findViewById(R.id.card_view_mains);
+        dessertsCard = findViewById(R.id.card_view_desserts);
+
+        dessertsCard.setOnClickListener(view -> {
+
+            Intent dessertsActivityIntent = new Intent(MainActivity.this, DessertsActivity.class);
+
+            startActivity(dessertsActivityIntent);
+        });
 
         startersCard.setOnClickListener(view -> {
 
