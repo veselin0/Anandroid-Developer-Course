@@ -19,8 +19,12 @@ public class MainActivity extends AppCompatActivity {
                 new Project("Wise Quote App", "A personal motivational quote", R.drawable.quote),
                 new Project("BMI Calculator", "A working BMI calculator", R.drawable.tape),
                 new Project("Inch to Meter Calculator", "A basic convertor for inch to meter", R.drawable.calculator),
-                new Project("Restaurant App", "A menue for a fictional restaurant", R.drawable.hungry_hog)
+                new Project("Restaurant App", "A menu for a fictional restaurant", R.drawable.hungry_hog)
         };
+
+        ProjectsAdapter adapter = new ProjectsAdapter(projects);
+
+        list.setAdapter(adapter);
 
     }
 }
