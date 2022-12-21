@@ -53,6 +53,7 @@ public class ProjectsAdapter extends RecyclerView.Adapter<ProjectsAdapter.Projec
             appImage.setImageResource(project.image);
         }
 
+
     }
 
 }
