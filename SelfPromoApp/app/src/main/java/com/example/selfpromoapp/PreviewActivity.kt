@@ -16,9 +16,15 @@ class PreviewActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        binding.textViewMessage.text = "This will be message preview: Arduino has been chosen" +
-                " as the embedded system for this book, and specifically Arduino " +
-                " boards that have 8-bit AVR microcontrollers on-board and can be fitted with the standard" +
-                " add-on boards called shields."
+        val contactName = intent.getStringExtra("Contact Name")
+        val contactNumber = intent.getStringExtra("Contact Number")
+        val myDisplayName = intent.getStringExtra("My Display Name")
+        val includeJunior = intent.getBooleanExtra("Include Junior", false)
+        val jobTitle = intent.getStringExtra("Job Title")
+        val immediateStart = intent.getBooleanExtra("Immediate Start", false)
+        val startDate = intent.getStringExtra("Start Date")
+        val testString = "Contact Name: $contactName, Contact Number: $contactNumber, My Display Name: $myDisplayName, " +
+                "Include Junior: $includeJunior, Job Title: $jobTitle, Immediate Start: $immediateStart, Start Date: $startDate"
+        binding.textViewMessage.text = testString
     }
 }
