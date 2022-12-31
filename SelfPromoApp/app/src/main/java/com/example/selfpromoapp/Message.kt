@@ -8,4 +8,4 @@ data class Message(
     val jobTitle: String?,
     val immediateStart: Boolean,
     val startDate: String?
-)
+) : java.io.Serializable
