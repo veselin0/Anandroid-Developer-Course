@@ -1,25 +1,20 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
-    id 'org.jetbrains.kotlin.android.extensions'
 }
 
 android {
-    namespace 'com.example.selfpromoapp'
-    compileSdk 33
+    namespace 'com.example.helpfilesenddata'
+    compileSdk 32
 
     defaultConfig {
-        applicationId "com.example.selfpromoapp"
+        applicationId "com.example.helpfilesenddata"
         minSdk 21
-        targetSdk 33
+        targetSdk 32
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-    }
-
-    buildFeatures {
-        viewBinding true
     }
 
     buildTypes {
@@ -39,7 +34,7 @@ android {
 
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'com.google.android.material:material:1.7.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'

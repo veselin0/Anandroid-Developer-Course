@@ -7,46 +7,48 @@ import android.util.Log
 import android.widget.Adapter
 import android.widget.ArrayAdapter
 import android.widget.Button
+import android.widget.EditText
 import android.widget.CheckBox
 import android.widget.Spinner
 import android.widget.Toast
 import com.example.selfpromoapp.databinding.ActivityMainBinding
 import com.google.android.material.textfield.TextInputEditText
+import kotlinx.android.synthetic.main.activity_main.*
+
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        val view = binding.root
-        setContentView(view)
+        setContentView(R.layout.activity_main)
 
-        binding.buttonPreview.setOnClickListener {
+        button_preview.setOnClickListener {
             onPreviewClicked()
         }
-        val spinnerValues/*: Array<String>*/ = arrayOf("Android Developer", "Android Engineer")
-        val spinnerAdapter =
-            ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, spinnerValues)
-        binding.spinnerJobTitle.adapter = spinnerAdapter
+
     }
 
     private fun onPreviewClicked() {
+        val contactName = edit_text_contact_name.toString()
+        val contactNumber = edit_text_contact_number.toString()
+        val myDisplayName = edit_text_my_display_name.toString()
+        val includeJunior = check_box_junior.isChecked
+        val jobTitle = spinner_job_title.selectedItem?.toString()
+        val immediateStart = check_box_immediate_start.isChecked
+        val startDate = edit_text_start_date.toString()
 
-        val message = Message(
-            binding.editTextContactName.text.toString(),
-            binding.editTextContactNumber.text.toString(),
-            binding.editTextMyDisplayName.text.toString(),
-            binding.checkBoxJunior.isChecked,
-            binding.spinnerJobTitle.selectedItem?.toString(),
-            binding.checkBoxImmediateStart.isChecked,
-            binding.editTextStartDate.text.toString()
-        )
+        val testString = """
+            Contact Name: $contactName,
+            Contact Number: $contactNumber,
+            My Display Name: $myDisplayName,
+            Include Junior: $includeJunior,
+            Job Title: $jobTitle,
+            ImmediateStart: $immediateStart,
+            Start Date: $startDate
+                  """.trimIndent()
 
-        val previewActivityIntent = Intent(this, PreviewActivity::class.java)
-        previewActivityIntent.putExtra("Message", message)
+        Toast.makeText(this, testString, Toast.LENGTH_LONG).show()
 
-        startActivity(previewActivityIntent)
     }
 }

@@ -3,19 +3,30 @@ package com.example.selfpromoapp
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Message
+import android.widget.Button
+import android.widget.CheckBox
+import android.widget.EditText
+import android.widget.Spinner
+import android.widget.TextView
 import com.example.selfpromoapp.databinding.ActivityMainBinding
 import com.example.selfpromoapp.databinding.ActivityPreviewBinding
 
 class PreviewActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityPreviewBinding
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityPreviewBinding.inflate(layoutInflater)
-        val view = binding.root
-        setContentView(view)
+        setContentView(R.layout.activity_preview)
 
-        val message = intent.getSerializableExtra("Message") as Message
+
+
+
+        }
+
+
     }
-}
+
+
+
+
