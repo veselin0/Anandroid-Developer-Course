@@ -1,5 +1,7 @@
 package com.example.selfpromoapp
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.selfpromoapp.databinding.ActivityPreviewBinding
@@ -45,7 +47,11 @@ class PreviewActivity : AppCompatActivity() {
 
     private  fun setUpButton() {
         binding.buttonSendMessage.setOnClickListener {
-            // Send message intent
+            val intent = Intent(Intent.ACTION_SENDTO).apply {
+                data = Uri.parse("smsto: ${message.contactNumber}")
+                putExtra("sms_body", messagePreviewText)
+            }
+            startActivity(intent)
         }
     }
 }
