@@ -1,12 +1,9 @@
-package com.example.selfpromoapp
-
-import android.os.Parcel
-import android.os.Parcelable
+package com.example.selfpromotionapp
 
 data class Message(
-    val contactName: String?,
-    val contactNumber: String?,
-    val myDisplayName: String?,
+    val contactName: String,
+    val contactNumber: String,
+    val myDisplayName: String,
     val includeJunior: Boolean,
     val jobTitle: String?,
     val immediateStart: Boolean,
@@ -16,4 +13,3 @@ data class Message(
 
     fun getAvailability() = if (immediateStart) "immediately" else "from $startDate"
 }
-
