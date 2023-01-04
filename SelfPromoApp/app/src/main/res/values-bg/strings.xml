@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Промо Апп</string>
+    <string name="hint_contact_name">Лице за контакт</string>
+    <string name="hint_contact_number">Телефонен номер</string>
+    <string name="hint_my_display_name">Моето име</string>
+    <string name="text_include_junior">Включи "Джуниър"</string>
+    <string name="text_immediate_start">Започвам незабавно</string>
+    <string name="hint_available_from_date">На разположение от дата</string>
+    <string name="button_text_preview_message">Преглед на съобщението</string>
+    <string name="button_text_send_message">Изпращане на съобщението</string>
+    <string name="andr_dev">Разработчик на Андроид</string>
+
+</resources>
