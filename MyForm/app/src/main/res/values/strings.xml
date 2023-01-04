@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">My Form</string>
+    <string name="text_input_first_name">First Name</string>
+    <string name="text_input_last_name">Last Name</string>
+    <string name="text_input_email">Email</string>
+    <string name="text_input_phone">Phone</string>
+    <string name="text_input_password">Password</string>
+    <string name="button_to_summary">To Summary</string>
+</resources>
