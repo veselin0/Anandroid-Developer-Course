@@ -36,8 +36,9 @@ class PreviewActivity : AppCompatActivity() {
                 My name is ${message.myDisplayName} and I am ${message.getFullJobDescription()}.
                 I have a portfolio of apps to demonstrate my technical skills
                 that I can show on request.
-                I am able to start a new position ${message.getAvailability()}.
-                Please, get in touch if you have any suitable roles for me.
+                I am able to start a new position ${message.getAvailability()},
+                if in the meantime another headhunter hasn't already hired me.
+                Hurry to get in touch.
                 Thanks and best regards.
                 
             """.trimIndent()
