@@ -1,15 +1,14 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
-    id 'org.jetbrains.kotlin.android.extensions'
 }
 
 android {
-    namespace 'com.example.myform'
+    namespace 'com.example.registrationapp'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.myform"
+        applicationId "com.example.registrationapp"
         minSdk 21
         targetSdk 33
         versionCode 1
