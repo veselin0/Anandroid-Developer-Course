@@ -12,7 +12,7 @@ class PreviewActivity : AppCompatActivity() {
     private lateinit var messagePreviewText: String
 
     private lateinit var binding: ActivityPreviewBinding
-    @Suppress("DEPRECATION")
+
 //    @RequiresApi(Build.VERSION_CODES.TIRAMISU)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,6 +25,7 @@ class PreviewActivity : AppCompatActivity() {
         setUpButton()
     }
 
+    @Suppress("DEPRECATION")
     private fun displayMessage() {
         message = intent.getSerializableExtra("Message") as Message
 
