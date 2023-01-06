@@ -1,12 +1,10 @@
 package com.example.vinregapp
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
-import com.example.registrationapp.SummaryActivity
-import com.example.registrationapp.User
-import com.example.registrationapp.databinding.ActivityMainBinding
+import androidx.appcompat.app.AppCompatActivity
+import com.example.vinregapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,7 +24,7 @@ class MainActivity : AppCompatActivity() {
     private fun setupSpinner() {
         val titles = arrayOf("Miss", "Mrs", "Mr", "Dr", "Prof")
         val titleAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item,
-            titles)
+        titles)
         binding.spinnerTitle.adapter = titleAdapter
     }
 
