@@ -7,4 +7,8 @@ data class User(
     val email: String,
     val phone: String,
     val password: String
-) : java.io.Serializable
+) : java.io.Serializable {
+
+    fun getFullName() = "$title $firstName $lastName"
+
+}

@@ -1,10 +1,10 @@
 package com.example.registrationapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
 import com.example.registrationapp.databinding.ActivityMainBinding
-import com.example.registrationapp.databinding.ActivityMainBinding.bind
 import com.example.registrationapp.databinding.ActivityMainBinding.inflate
 
 class MainActivity : AppCompatActivity() {
@@ -43,5 +43,10 @@ class MainActivity : AppCompatActivity() {
             binding.editTextPhone.toString(),
             binding.editTextPassword.toString()
         )
+
+        val intent = Intent(this, SummaryActivity::class.java)
+        intent.putExtra("User", user)
+        startActivity(intent)
+
     }
 }
