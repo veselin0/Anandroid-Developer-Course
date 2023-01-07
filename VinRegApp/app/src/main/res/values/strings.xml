@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">VinRegApp</string>
+    <string name="main_activity_register_title">Register</string>
+    <string name="edit_text_first_name">First Name</string>
+    <string name="edit_text_last_name">Last Name</string>
+    <string name="edit_text_email">Email</string>
+    <string name="edit_text_phone">Phone</string>
+    <string name="edit_text_password">Password</string>
+    <string name="button_create_account">Create Account</string>
+    <string name="activity_summary_heading">Your Account Details</string>
 </resources>
