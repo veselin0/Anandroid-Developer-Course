@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(view)
         setupSpinner()
         setupButton()
+//        supportActionBar?.hide();
 
     }
 
