@@ -10,6 +10,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.recordkeeperapp.R.id.navigation_cycling
 import com.example.recordkeeperapp.databinding.ActivityMainBinding
+import com.example.recordkeeperapp.ui.cycling.CyclingFragment
 import com.example.recordkeeperapp.ui.running.RunningFragment
 
 class MainActivity : AppCompatActivity() {
@@ -22,9 +23,12 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        supportFragmentManager.commit {
+        binding.buttonCycling.setOnClickListener {
+            onCyclingClicked()
+        }
 
-            add(R.id.nav_host_fragment_activity_main, RunningFragment())
+        binding.buttonRunning.setOnClickListener {
+            onRunningClicked()
         }
 
 //        val navView: BottomNavigationView = binding.navView
@@ -39,5 +43,19 @@ class MainActivity : AppCompatActivity() {
 //        )
 //        setupActionBarWithNavController(navController, appBarConfiguration)
 //        navView.setupWithNavController(navController)
+    }
+
+    private fun onRunningClicked() {
+        supportFragmentManager.commit {
+
+            replace(R.id.nav_host_fragment_activity_main, RunningFragment())
+        }
+    }
+
+    private fun onCyclingClicked() {
+        supportFragmentManager.commit {
+
+            replace(R.id.nav_host_fragment_activity_main, CyclingFragment())
+        }
     }
 }

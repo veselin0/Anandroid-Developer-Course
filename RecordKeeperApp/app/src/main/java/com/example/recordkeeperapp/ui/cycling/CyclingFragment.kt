@@ -22,14 +22,14 @@ class CyclingFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val dashboardViewModel =
+        val cyclingViewModel =
             ViewModelProvider(this)[CyclingViewModel::class.java]
 
         _binding = FragmentCyclingBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         val textView: TextView = binding.textCycling
-        dashboardViewModel.text.observe(viewLifecycleOwner) {
+        cyclingViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
         return root

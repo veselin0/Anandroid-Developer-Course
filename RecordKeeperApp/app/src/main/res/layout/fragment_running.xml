@@ -19,5 +19,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:text="Hooray! Now I can add Fragments to my App!"/>
+        android:text="That is the Running Fragment"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
