@@ -16,8 +16,19 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
+        binding.buttonCycling.setOnClickListener { onCyclingCliclked() }
+        binding.buttonRunning.setOnClickListener { onCyclingRunning() }
+    }
+
+    private fun onCyclingRunning() {
         supportFragmentManager.commit {
-            add(R.id.frame_content, RunningFragment())
+            replace(R.id.frame_content, RunningFragment())
+        }
+    }
+
+    private fun onCyclingCliclked() {
+        supportFragmentManager.commit {
+            replace(R.id.frame_content, CyclingFragment())
         }
     }
 
