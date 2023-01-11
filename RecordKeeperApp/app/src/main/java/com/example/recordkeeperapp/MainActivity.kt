@@ -2,6 +2,7 @@ package com.example.recordkeeperapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.fragment.app.commit
 import com.example.recordkeeperapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -15,8 +16,9 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        binding.frameContent
-        binding.bottomNav
+        supportFragmentManager.commit {
+            add(R.id.frame_content, RunningFragment())
+        }
     }
 
 }
