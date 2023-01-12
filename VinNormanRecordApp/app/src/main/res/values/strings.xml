@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">VinNormanRecordApp</string>
+    <string name="running">Running</string>
+    <string name="person_running">Person Running in the Field</string>
 </resources>
