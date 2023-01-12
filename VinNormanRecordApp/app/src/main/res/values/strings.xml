@@ -2,4 +2,8 @@
     <string name="app_name">VinNormanRecordApp</string>
     <string name="running">Running</string>
     <string name="person_running">Person Running in the Field</string>
+    <string name="_5km">5km</string>
+    <string name="_10km">10km</string>
+    <string name="half_marathon">Half Marathon</string>
+    <string name="marathon">Marathon</string>
 </resources>
