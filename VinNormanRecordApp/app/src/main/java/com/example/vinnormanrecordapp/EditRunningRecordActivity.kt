@@ -2,10 +2,22 @@ package com.example.vinnormanrecordapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.vinnormanrecordapp.databinding.ActivityEditRunnungRecordBinding
 
 class EditRunningRecordActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityEditRunnungRecordBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_edit_runnung_record)
+
+        binding = ActivityEditRunnungRecordBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        val distance: String? = intent.getStringExtra("Distance")
+
+        title = "$distance Record"
     }
+
+
 }
