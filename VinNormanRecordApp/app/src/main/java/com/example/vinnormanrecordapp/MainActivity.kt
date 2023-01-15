@@ -4,6 +4,7 @@ package com.example.vinnormanrecordapp
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.commit
 import com.example.vinnormanrecordapp.databinding.ActivityMainBinding
@@ -27,6 +28,32 @@ class MainActivity : AppCompatActivity(), NavigationBarView.OnItemSelectedListen
         return true
     }
 
+    override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
+        R.id.reset_running_records -> {
+            Toast.makeText(
+                this, "Gocho deleted Running Records",
+                Toast.LENGTH_LONG
+            ).show()
+            true
+        }
+        R.id.reset_cycling_records -> {
+            Toast.makeText(
+                this, "Gocho deleted Cycling Records",
+                Toast.LENGTH_LONG
+            ).show()
+            true
+        }
+        R.id.reset_all_records -> {
+            Toast.makeText(
+                this, "Gocho deleted ALL Records",
+                Toast.LENGTH_LONG
+            ).show()
+            true
+        }
+        else -> super.onOptionsItemSelected(item)
+    }
+
+
     private fun onRunningClicked() {
         supportFragmentManager.commit {
             replace(R.id.frame_content, RunningFragment())
@@ -44,13 +71,12 @@ class MainActivity : AppCompatActivity(), NavigationBarView.OnItemSelectedListen
             onCyclingClicked()
             true
         }
-         R.id.nav_running -> {
+        R.id.nav_running -> {
             onRunningClicked()
             true
         }
         else -> false
 
     }
-
-
 }
+
