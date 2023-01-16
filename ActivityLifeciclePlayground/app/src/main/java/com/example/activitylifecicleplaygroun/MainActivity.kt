@@ -4,43 +4,32 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import com.example.activitylifecicleplaygroun.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityMainBinding
+    private var isFirstLoad = true
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        findViewById<Button>(R.id.button_exit).setOnClickListener {
-            Log.d("Gocho Kopchev", "In the button click listener...")
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
+
+        binding.buttonExit.setOnClickListener {
             finish()
         }
-        Log.d("GochoKochev", "I am in onCreate()!!")
-    }
-
-    override fun onStart() {
-        super.onStart()
-        Log.d("GochoKochev", "I am in onStart()!!")
     }
 
     override fun onResume() {
         super.onResume()
-        Log.d("GochoKochev", "I am in onResume()!!")
+        if (isFirstLoad) {
+            binding.textViewRefreshStatus.text = "Welcome to ther app! Her is your feed..."
+            isFirstLoad = false
+        } else {
+            binding.textViewRefreshStatus.text = "Your fees has been updated ..."
+        }
 
-    }
-
-    override fun onPause() {
-        super.onPause()
-        Log.d("GochoKochev", "I am in onPause()!!")
-
-    }
-
-    override fun onStop() {
-        super.onStop()
-        Log.d("GochoKochev", "I am in onStop()!!")
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        Log.d("Gocho Kochev", "I am now in onDestroy()!!")
     }
 }
