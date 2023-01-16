@@ -17,6 +17,16 @@ class MainActivity : AppCompatActivity() {
         Log.d("GochoKochev", "I am in onCreate()!!")
     }
 
+    override fun onStart() {
+        super.onStart()
+        Log.d("GochoKochev", "I am in onStart()!!")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.d("GochoKochev", "I am in onStop()!!")
+    }
+
     override fun onDestroy() {
         super.onDestroy()
         Log.d("Gocho Kochev", "I am now in onDestroy()!!")
