@@ -22,6 +22,18 @@ class MainActivity : AppCompatActivity() {
         Log.d("GochoKochev", "I am in onStart()!!")
     }
 
+    override fun onResume() {
+        super.onResume()
+        Log.d("GochoKochev", "I am in onResume()!!")
+
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.d("GochoKochev", "I am in onPause()!!")
+
+    }
+
     override fun onStop() {
         super.onStop()
         Log.d("GochoKochev", "I am in onStop()!!")
