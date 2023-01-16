@@ -9,7 +9,8 @@ import com.example.activitylifecicleplaygroun.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private var isFirstLoad = true
+//    private var isFirstLoad = true
+    private var numberOfLoads = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,16 +21,29 @@ class MainActivity : AppCompatActivity() {
         binding.buttonExit.setOnClickListener {
             finish()
         }
+        binding.textViewRefreshStatus.text = "Welcome to ther app! Her is your feed..."
     }
+
+//    override fun onRestart() {
+//        super.onRestart()
+//        binding.textViewRefreshStatus.text = "Your fees has been updated ..."
+//    }
 
     override fun onResume() {
         super.onResume()
-        if (isFirstLoad) {
-            binding.textViewRefreshStatus.text = "Welcome to ther app! Her is your feed..."
-            isFirstLoad = false
-        } else {
-            binding.textViewRefreshStatus.text = "Your fees has been updated ..."
-        }
-
+        numberOfLoads++
+        binding.textViewRefreshStatus.text = "Welcome to Your Feed!" +
+                " We have loaded your content $numberOfLoads time(s)"
     }
+
+//    override fun onResume() {
+//        super.onResume()
+//        if (isFirstLoad) {
+//            binding.textViewRefreshStatus.text = "Welcome to ther app! Her is your feed..."
+//            isFirstLoad = false
+//        } else {
+//            binding.textViewRefreshStatus.text = "Your fees has been updated ..."
+//        }
+
+//    }
 }
