@@ -5,12 +5,16 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import com.example.activitylifecicleplaygroun.databinding.ActivityMainBinding
+import java.util.*
+import kotlin.concurrent.fixedRateTimer
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    var seconds = 0
+    private lateinit var timer: Timer
 //    private var isFirstLoad = true
-    private var numberOfLoads = 0
+//    private var numberOfLoads = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,7 +25,26 @@ class MainActivity : AppCompatActivity() {
         binding.buttonExit.setOnClickListener {
             finish()
         }
-        binding.textViewRefreshStatus.text = "Welcome to ther app! Her is your feed..."
+//        binding.textViewRefreshStatus.text = "Welcome to ther app! Her is your feed..."
+
+
+
+    }
+
+    override fun onResume() {
+        super.onResume()
+        timer = fixedRateTimer(period = 1000L) {
+            runOnUiThread {
+                seconds++
+                binding.textViewTimer.text = "You have been staring at this" +
+                        " screen for $seconds seconds"
+            }
+        }
+    }
+
+    override fun onPause() {
+        super.onPause()
+        timer.cancel()
     }
 
 //    override fun onRestart() {
@@ -29,12 +52,12 @@ class MainActivity : AppCompatActivity() {
 //        binding.textViewRefreshStatus.text = "Your fees has been updated ..."
 //    }
 
-    override fun onResume() {
-        super.onResume()
-        numberOfLoads++
-        binding.textViewRefreshStatus.text = "Welcome to Your Feed!" +
-                " We have loaded your content $numberOfLoads time(s)"
-    }
+//    override fun onResume() {
+//        super.onResume()
+//        numberOfLoads++
+//        binding.textViewRefreshStatus.text = "Welcome to Your Feed!" +
+//                " We have loaded your content $numberOfLoads time(s)"
+//    }
 
 //    override fun onResume() {
 //        super.onResume()
