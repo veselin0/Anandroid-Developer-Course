@@ -2,17 +2,17 @@ package com.example.activitylifecicleplaygroun
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.widget.Button
+//import android.util.Log
+//import android.widget.Button
 import com.example.activitylifecicleplaygroun.databinding.ActivityMainBinding
-import java.util.*
-import kotlin.concurrent.fixedRateTimer
+//import java.util.*
+//import kotlin.concurrent.fixedRateTimer
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    var seconds = 0
-    private lateinit var timer: Timer
+//    var seconds = 0
+//    private lateinit var timer: Timer
 //    private var isFirstLoad = true
 //    private var numberOfLoads = 0
 
@@ -31,21 +31,22 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    override fun onResume() {
-        super.onResume()
-        timer = fixedRateTimer(period = 1000L) {
-            runOnUiThread {
-                seconds++
-                binding.textViewTimer.text = "You have been staring at this" +
-                        " screen for $seconds seconds"
-            }
-        }
-    }
+//    override fun onResume() {
+//        super.onResume()
+//        timer = fixedRateTimer(period = 1000L) {
+//            runOnUiThread {
+//                seconds++
+//                var testString = "You have been staring at this" +
+//                        " screen for $seconds seconds"
+//                binding.textViewTimer.text = testString
+//            }
+//        }
+//    }
 
-    override fun onPause() {
-        super.onPause()
-        timer.cancel()
-    }
+//    override fun onPause() {
+//        super.onPause()
+//        timer.cancel()
+//    }
 
 //    override fun onRestart() {
 //        super.onRestart()
