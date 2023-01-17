@@ -5,6 +5,8 @@ import android.os.Bundle
 //import android.util.Log
 //import android.widget.Button
 import com.example.activitylifecicleplaygroun.databinding.ActivityMainBinding
+import java.io.File
+
 //import java.util.*
 //import kotlin.concurrent.fixedRateTimer
 
@@ -29,6 +31,12 @@ class MainActivity : AppCompatActivity() {
 
 
 
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        val userMessage = binding.editTextMessage.text
+        File(filesDir, "user message.txt").writeText(userMessage.toString())
     }
 
 //    override fun onResume() {
