@@ -53,7 +53,8 @@ class MainActivity : AppCompatActivity() {
     private fun showDialog() {
         AlertDialog.Builder(this)
             .setTitle("Warning!")
-            .setMessage("You are about to leave the app. Are you sure you want to exit?")
+//            .setMessage("You are about to leave the app. Are you sure you want to exit?")
+            .setView(R.layout.dialog_warning)
             .setPositiveButton("Yes") { _, _ ->
                 finish()
             }
