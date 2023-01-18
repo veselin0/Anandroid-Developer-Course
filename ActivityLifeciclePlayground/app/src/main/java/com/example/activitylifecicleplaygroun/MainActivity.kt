@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.widget.Toast
 import android.window.OnBackInvokedDispatcher
 import androidx.activity.OnBackPressedCallback
+import androidx.activity.OnBackPressedDispatcher
+import androidx.activity.addCallback
 //import android.util.Log
 //import android.widget.Button
 import com.example.activitylifecicleplaygroun.databinding.ActivityMainBinding
@@ -29,17 +31,24 @@ class MainActivity : AppCompatActivity() {
 
         binding.buttonExit.setOnClickListener {
             finish()
+
+
+
         }
 //        binding.textViewRefreshStatus.text = "Welcome to ther app! Her is your feed..."
 
+        onBackPressedDispatcher.addCallback {
+            Toast.makeText(this@MainActivity, "In the button callback",
+                Toast.LENGTH_LONG).show()
 
+        }
 
     }
 
-    override fun onBackPressed() {
-//          onBackPressedDispatcher.onBackPressed()
-        Toast.makeText(this, "Back button pressed", Toast.LENGTH_LONG).show()
-    }
+//    override fun onBackPressed() {
+//          //onBackPressedDispatcher.onBackPressed()
+//        Toast.makeText(this, "Back button pressed", Toast.LENGTH_LONG).show()
+//    }
 
 //    override fun onDestroy() {
 //        super.onDestroy()
@@ -87,3 +96,5 @@ class MainActivity : AppCompatActivity() {
 
 //    }
 }
+
+
