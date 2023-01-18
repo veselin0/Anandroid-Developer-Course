@@ -7,6 +7,7 @@ import android.window.OnBackInvokedDispatcher
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.OnBackPressedDispatcher
 import androidx.activity.addCallback
+import androidx.appcompat.app.AlertDialog
 //import android.util.Log
 //import android.widget.Button
 import com.example.activitylifecicleplaygroun.databinding.ActivityMainBinding
@@ -30,18 +31,27 @@ class MainActivity : AppCompatActivity() {
         setContentView(view)
 
         binding.buttonExit.setOnClickListener {
-            finish()
-
-
-
+//            finish()
+            showDialog()
+        onBackPressedDispatcher.addCallback { showDialog() }
         }
 //        binding.textViewRefreshStatus.text = "Welcome to ther app! Her is your feed..."
 
-        onBackPressedDispatcher.addCallback {
-            Toast.makeText(this@MainActivity, "In the button callback",
-                Toast.LENGTH_LONG).show()
-
+//        onBackPressedDispatcher.addCallback {
+//            Toast.makeText(
+//                this@MainActivity, "In the button callback",
+//                Toast.LENGTH_LONG
+//            ).show()
         }
+
+
+
+    private fun showDialog() {
+        AlertDialog.Builder(this)
+            .setTitle("Warning!")
+            .setMessage("You are about to leave the app. Are you sure you want to exit?")
+            .show()
+
 
     }
 
