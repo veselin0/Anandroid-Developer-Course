@@ -3,6 +3,7 @@ package com.example.activitylifecicleplaygroun
 import android.content.DialogInterface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.widget.Toast
 import android.window.OnBackInvokedDispatcher
 import androidx.activity.OnBackPressedCallback
@@ -45,6 +46,15 @@ class MainActivity : AppCompatActivity() {
 //            ).show()
 
         onBackPressedDispatcher.addCallback { showDialog() }
+
+
+        binding.textViewSavedMessage.text = savedInstanceState?.getString("savedMessage")
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        val savedTextViewMessage = binding.textViewSavedMessage.text.toString()
+        outState.putString("savedMessage", savedTextViewMessage)
     }
 
     private fun saveMessage() {
