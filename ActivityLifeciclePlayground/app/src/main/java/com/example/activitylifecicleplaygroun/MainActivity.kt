@@ -34,8 +34,8 @@ class MainActivity : AppCompatActivity() {
         binding.buttonExit.setOnClickListener {
 //            finish()
             showDialog()
-
         }
+        binding.buttonSave.setOnClickListener { saveMessage() }
 //        binding.textViewRefreshStatus.text = "Welcome to ther app! Her is your feed..."
 
 //        onBackPressedDispatcher.addCallback {
@@ -47,7 +47,14 @@ class MainActivity : AppCompatActivity() {
         onBackPressedDispatcher.addCallback { showDialog() }
     }
 
-
+    private fun saveMessage() {
+        val userMessage = binding.editTextMessage.text
+        File(filesDir, "user message.txt").writeText(userMessage.toString())
+        val resourceString = "Your message have been saved\n\n" +
+                "Message Preview:\n\n$userMessage"
+        binding.textViewSavedMessage.text = resourceString
+        binding.editTextMessage.setText("")
+    }
 
 
     private fun showDialog() {
@@ -62,14 +69,33 @@ class MainActivity : AppCompatActivity() {
                 dialog.dismiss()
             }
             .setNeutralButton("More Info") { dialog, _ ->
-                Toast.makeText(this, "This is where the more info screen could be!",
-                    Toast.LENGTH_LONG).show()
+                Toast.makeText(
+                    this, "This is where the more info screen could be!",
+                    Toast.LENGTH_LONG
+                ).show()
                 dialog.dismiss()
             }
             .show()
 
 
     }
+
+    override fun onResume() {
+        super.onResume()
+    }
+
+    override fun onPause() {
+        super.onPause()
+    }
+
+    override fun onStop() {
+        super.onStop()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+    }
+
 
 //    override fun onBackPressed() {
 //          //onBackPressedDispatcher.onBackPressed()

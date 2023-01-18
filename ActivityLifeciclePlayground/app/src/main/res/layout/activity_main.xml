@@ -12,26 +12,40 @@
         android:layout_height="wrap_content"
         android:hint="Please, type the message you want to save here!"
         android:minLines="3"
-        app:layout_constraintBottom_toTopOf="@+id/text_view_timer"
+        app:layout_constraintBottom_toTopOf="@+id/text_view_saved_message"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/text_view_timer"
+        android:id="@+id/text_view_saved_message"
         android:layout_width="wrap_content"
+        android:padding="12dp"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/button_exit"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="You have been staring at this screen 25 seconds!" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_message"
+        tools:text="Preview of the saved message..." />
+
+    <Button
+        android:id="@+id/button_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save Message"
+        app:layout_constraintBottom_toTopOf="@+id/button_exit"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="12dp"
+        app:layout_constraintStart_toStartOf="parent" />
+        " />
 
     <Button
         android:id="@+id/button_exit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="12dp"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:text="Exit Activity"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
