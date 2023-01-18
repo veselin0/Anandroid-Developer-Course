@@ -2,6 +2,9 @@ package com.example.activitylifecicleplaygroun
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
+import android.window.OnBackInvokedDispatcher
+import androidx.activity.OnBackPressedCallback
 //import android.util.Log
 //import android.widget.Button
 import com.example.activitylifecicleplaygroun.databinding.ActivityMainBinding
@@ -33,11 +36,16 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        val userMessage = binding.editTextMessage.text
-        File(filesDir, "user message.txt").writeText(userMessage.toString())
+    override fun onBackPressed() {
+//          onBackPressedDispatcher.onBackPressed()
+        Toast.makeText(this, "Back button pressed", Toast.LENGTH_LONG).show()
     }
+
+//    override fun onDestroy() {
+//        super.onDestroy()
+//        val userMessage = binding.editTextMessage.text
+//        File(filesDir, "user message.txt").writeText(userMessage.toString())
+//    }
 
 //    override fun onResume() {
 //        super.onResume()
