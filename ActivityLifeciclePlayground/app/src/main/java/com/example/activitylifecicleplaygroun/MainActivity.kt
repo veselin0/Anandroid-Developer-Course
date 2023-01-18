@@ -1,5 +1,6 @@
 package com.example.activitylifecicleplaygroun
 
+import android.content.DialogInterface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -33,7 +34,7 @@ class MainActivity : AppCompatActivity() {
         binding.buttonExit.setOnClickListener {
 //            finish()
             showDialog()
-        onBackPressedDispatcher.addCallback { showDialog() }
+
         }
 //        binding.textViewRefreshStatus.text = "Welcome to ther app! Her is your feed..."
 
@@ -42,7 +43,10 @@ class MainActivity : AppCompatActivity() {
 //                this@MainActivity, "In the button callback",
 //                Toast.LENGTH_LONG
 //            ).show()
-        }
+
+        onBackPressedDispatcher.addCallback { showDialog() }
+    }
+
 
 
 
@@ -50,6 +54,17 @@ class MainActivity : AppCompatActivity() {
         AlertDialog.Builder(this)
             .setTitle("Warning!")
             .setMessage("You are about to leave the app. Are you sure you want to exit?")
+            .setPositiveButton("Yes") { _, _ ->
+                finish()
+            }
+            .setNegativeButton("No") { dialog, _ ->
+                dialog.dismiss()
+            }
+            .setNeutralButton("More Info") { dialog, _ ->
+                Toast.makeText(this, "This is where the more info screen could be!",
+                    Toast.LENGTH_LONG).show()
+                dialog.dismiss()
+            }
             .show()
 
 
