@@ -1,4 +1,4 @@
-package com.example.activitylifecicleplaygroun
+package com.example.activitylifecicleplayground
 
 import android.content.DialogInterface
 import androidx.appcompat.app.AppCompatActivity
@@ -10,6 +10,7 @@ import androidx.activity.OnBackPressedCallback
 import androidx.activity.OnBackPressedDispatcher
 import androidx.activity.addCallback
 import androidx.appcompat.app.AlertDialog
+import com.example.activitylifecicleplaygroun.R
 //import android.util.Log
 //import android.widget.Button
 import com.example.activitylifecicleplaygroun.databinding.ActivityMainBinding

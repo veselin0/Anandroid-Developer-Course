@@ -1,4 +1,4 @@
-package com.example.activitylifecicleplaygroun
+package com.example.activitylifecicleplayground
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
