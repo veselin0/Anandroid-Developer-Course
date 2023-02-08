@@ -1,16 +1,11 @@
-package com.example.activitylifecicleplayground
+package com.example.activitylifecicleplaygroun
 
-import android.content.DialogInterface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.widget.Toast
-import android.window.OnBackInvokedDispatcher
-import androidx.activity.OnBackPressedCallback
-import androidx.activity.OnBackPressedDispatcher
 import androidx.activity.addCallback
 import androidx.appcompat.app.AlertDialog
-import com.example.activitylifecicleplaygroun.R
+import androidx.fragment.app.commit
 //import android.util.Log
 //import android.widget.Button
 import com.example.activitylifecicleplaygroun.databinding.ActivityMainBinding
@@ -38,6 +33,8 @@ class MainActivity : AppCompatActivity() {
             showDialog()
         }
         binding.buttonSave.setOnClickListener { saveMessage() }
+        binding.buttonShowFragment.setOnClickListener { showFragment() }
+        binding.buttonRemoveFragment.setOnClickListener { removeFragment() }
 //        binding.textViewRefreshStatus.text = "Welcome to ther app! Her is your feed..."
 
 //        onBackPressedDispatcher.addCallback {
@@ -50,6 +47,16 @@ class MainActivity : AppCompatActivity() {
 
 
         binding.textViewSavedMessage.text = savedInstanceState?.getString("savedMessage")
+    }
+
+    private fun showFragment() {
+        supportFragmentManager.commit {
+            add(R.id.fragment_container, TestFragment())
+        }
+    }
+
+    private fun removeFragment() {
+        TODO("Not yet implemented")
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
@@ -91,21 +98,21 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    override fun onResume() {
-        super.onResume()
-    }
-
-    override fun onPause() {
-        super.onPause()
-    }
-
-    override fun onStop() {
-        super.onStop()
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-    }
+//    override fun onResume() {
+//        super.onResume()
+//    }
+//
+//    override fun onPause() {
+//        super.onPause()
+//    }
+//
+//    override fun onStop() {
+//        super.onStop()
+//    }
+//
+//    override fun onDestroy() {
+//        super.onDestroy()
+//    }
 
 
 //    override fun onBackPressed() {

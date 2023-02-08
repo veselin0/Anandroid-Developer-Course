@@ -1,4 +1,4 @@
-package com.example.activitylifecicleplayground
+package com.example.activitylifecicleplaygroun
 
 import org.junit.Test
 
