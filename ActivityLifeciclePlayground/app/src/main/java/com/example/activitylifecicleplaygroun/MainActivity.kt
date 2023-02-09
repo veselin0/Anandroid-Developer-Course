@@ -17,6 +17,7 @@ import java.io.File
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private val testFragment = TestFragment()
 //    var seconds = 0
 //    private lateinit var timer: Timer
 //    private var isFirstLoad = true
@@ -51,12 +52,14 @@ class MainActivity : AppCompatActivity() {
 
     private fun showFragment() {
         supportFragmentManager.commit {
-            add(R.id.fragment_container, TestFragment())
+            add(R.id.fragment_container, testFragment)
         }
     }
 
     private fun removeFragment() {
-        TODO("Not yet implemented")
+        supportFragmentManager.commit {
+            remove(testFragment)
+        }
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
