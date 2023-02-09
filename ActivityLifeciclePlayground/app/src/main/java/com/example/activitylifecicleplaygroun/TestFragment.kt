@@ -11,9 +11,11 @@ import com.example.activitylifecicleplaygroun.databinding.FragmentTestBinding
 class TestFragment: Fragment() {
 
     private lateinit var binding: FragmentTestBinding
+    private var fragmentListener: TestFragmentListener? = null
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
+        fragmentListener = context as TestFragmentListener
     }
 //    In most cases there will be no need of using onCreate method in Fragments:
 //    override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,6 +34,9 @@ class TestFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.textViewFragmentText.text = "This is on view created in the Test Fragment!"
+        binding.buttonClearScreen.setOnClickListener {
+            fragmentListener?.clearActivityScreen()
+        }
     }
 
 //    We rarely will use this method:
@@ -41,6 +46,13 @@ class TestFragment: Fragment() {
 
     override fun onDetach() {
         super.onDetach()
+        fragmentListener = null
+    }
+
+    interface TestFragmentListener {
+
+        fun clearActivityScreen()
+
     }
 }
 

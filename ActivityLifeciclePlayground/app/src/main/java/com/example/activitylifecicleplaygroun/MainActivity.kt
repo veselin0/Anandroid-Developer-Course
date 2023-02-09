@@ -14,7 +14,7 @@ import java.io.File
 //import java.util.*
 //import kotlin.concurrent.fixedRateTimer
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), TestFragment.TestFragmentListener {
 
     private lateinit var binding: ActivityMainBinding
     private val testFragment = TestFragment()
@@ -99,6 +99,12 @@ class MainActivity : AppCompatActivity() {
             .show()
 
 
+    }
+
+    override fun clearActivityScreen() {
+        binding.editTextMessage.setText("")
+        binding.textViewSavedMessage.text = ""
+        removeFragment()
     }
 
 //    override fun onResume() {
