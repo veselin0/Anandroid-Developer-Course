@@ -1,4 +1,4 @@
-package com.example.vinnormanrecordapp
+package com.example.vinnormanrecordapp.cycling
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

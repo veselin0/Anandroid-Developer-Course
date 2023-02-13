@@ -1,4 +1,4 @@
-package com.example.vinnormanrecordapp
+package com.example.vinnormanrecordapp.cycling
 
 import android.content.Intent
 import android.os.Bundle
