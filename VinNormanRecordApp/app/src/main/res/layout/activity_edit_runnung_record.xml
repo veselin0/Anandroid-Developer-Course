@@ -9,18 +9,51 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputRecord"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Record"
+        android:hint="@string/record_field_hint"
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextRecord"
             android:layout_width="match_parent"
-            tools:text="24:12"
-            android:layout_height="wrap_content" />
-
-
+            android:layout_height="wrap_content"
+            tools:text="24:12" />
     </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputDate"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:hint="@string/date_field_hint"
+        app:layout_constraintTop_toBottomOf="@id/textInputRecord">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="5th January 2023" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonSave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="@string/save_button_text"
+        app:layout_constraintTop_toBottomOf="@+id/textInputDate" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonDelete"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/clear_button_text"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSave" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
