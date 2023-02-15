@@ -13,6 +13,10 @@ class RunningFragment : Fragment() {
 
     private lateinit var binding: FragmentRunningBinding
 
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -27,6 +31,9 @@ class RunningFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         setupClickListeners()
+    }
+    override fun onResume() {
+        super.onResume()
         displayRecords()
     }
 
