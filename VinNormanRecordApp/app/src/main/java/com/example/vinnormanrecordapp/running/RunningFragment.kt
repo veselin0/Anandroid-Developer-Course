@@ -55,7 +55,7 @@ class RunningFragment : Fragment() {
         binding.textViewHalfMarathonValue.text = runningPreferences.getString("Half Marathon record", null)
         binding.textViewHalfMarathonDate.text = runningPreferences.getString("Half Marathon date", null)
         binding.textViewMarathonValue.text = runningPreferences.getString("Marathon record", null)
-        binding.textViewMarathonValue.text = runningPreferences.getString("Marathon date", null)
+        binding.textViewMarathonDate.text = runningPreferences.getString("Marathon date", null)
     }
 
     private fun launchRunningRecordScreen(distance: String) {
