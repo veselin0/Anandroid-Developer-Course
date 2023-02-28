@@ -1,6 +1,7 @@
 package com.example.vinnormanrecordapp.running
 
 import android.content.Context
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.content.edit
@@ -9,6 +10,8 @@ import com.example.vinnormanrecordapp.databinding.ActivityEditRunnungRecordBindi
 class EditRunningRecordActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityEditRunnungRecordBinding
+    private lateinit var runningPreferences: SharedPreferences
+    private val distance: String? by lazy { intent.getStringExtra("Distance") }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,7 +19,8 @@ class EditRunningRecordActivity : AppCompatActivity() {
         binding = ActivityEditRunnungRecordBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val distance = intent.getStringExtra("Distance")
+        runningPreferences = getSharedPreferences("running", Context.MODE_PRIVATE)
+
 
         title = "$distance Record"
 
@@ -37,21 +41,21 @@ class EditRunningRecordActivity : AppCompatActivity() {
 //            putBoolean("some preference file name", false)
 //        }
 
-        displayRecord(distance)
+        displayRecord()
         binding.buttonSave.setOnClickListener {
-            saveRecord(distance)
+            saveRecord()
             finish()
         }
     }
 
 
-    private fun displayRecord(distance: String?) {
+    private fun displayRecord() {
         val runningPreferences = getSharedPreferences("running", Context.MODE_PRIVATE)
         binding.editTextRecord.setText(runningPreferences.getString("$distance record", null))
         binding.editTextDate.setText(runningPreferences.getString("$distance date", null))
     }
 
-    private fun saveRecord(distance: String?) {
+    private fun saveRecord() {
         val record = binding.editTextRecord.text.toString()
         val date = binding.editTextDate.text.toString()
 
